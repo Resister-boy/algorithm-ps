@@ -17,8 +17,14 @@ func main() {
 	fmt.Fscanln(reader, &a)
 	fmt.Fscanln(reader, &b)
 
-	fmt.Fprintln(writer, a*(b%10))
-	fmt.Fprintln(writer, a*((b/10)%10))
-	fmt.Fprintln(writer, a*(b/100))
+	k := b
+	i := 1
+	for (k / 10) != 0 {
+		fmt.Fprintln(writer, a*(k%10))
+		k /= 10
+		i *= 10
+	}
+
+	fmt.Fprintln(writer, a*(b/i))
 	fmt.Fprintln(writer, a*b)
 }
