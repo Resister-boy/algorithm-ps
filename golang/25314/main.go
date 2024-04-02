@@ -18,5 +18,5 @@ func main() {
 	for i := 0; i < (a / 4); i++ {
 		fmt.Fprintf(writer, "long ")
 	}
-	fmt.Fprintln(writer, "int")
+	fmt.Fprintf(writer, "int")
 }
