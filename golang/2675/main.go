@@ -12,15 +12,27 @@ func main() {
 
 	defer writer.Flush()
 
-	var a, d int
-	var s string
+	var a, k int
 
 	fmt.Fscanln(reader, &a)
-	for i := 0; i < a; i++ {
-		fmt.Fscanln(reader, &d, &s)
-		for k := 0; k < len(s); k++ {
-			for j := 0; j < d; j++ {
-				fmt.Fprintf(writer, "%c", s[k])
+
+	for i := 0; i < a*2-1; i++ {
+		if i < a {
+			for j := 0; j < a+i; j++ {
+				if j+i+(a-(a-i)) >= a+i-1 {
+					fmt.Fprint(writer, "*")
+				} else {
+					fmt.Fprint(writer, " ")
+				}
+			}
+			k = i
+		} else {
+			for j := 0; j <= k*2-(i-k); j++ {
+				if j > i-a {
+					fmt.Fprint(writer, "*")
+				} else {
+					fmt.Fprint(writer, " ")
+				}
 			}
 		}
 		fmt.Fprintln(writer, "")
