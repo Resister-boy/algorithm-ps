@@ -35,6 +35,6 @@ func combi(m, n int) int {
 	if dp[m][n] != 0 {
 		return dp[m][n]
 	}
-	dp[m][n] = combi(m-1, n) + combi(m-1, n-1) // 조합의 성질, 파스칼의 삼각형 활용.
+	dp[m][n] = combi(m-1, n) + combi(m-1, n-1)
 	return dp[m][n]
 }
